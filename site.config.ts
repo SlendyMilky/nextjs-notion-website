@@ -1,31 +1,31 @@
-import { siteConfig } from './lib/site-config'
+mport { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '78fc5a4b88d74b0e824e29407e9f1ec1',
+  rootNotionPageId: '0be05c037a5a41f481f85d0ff75555ef',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'nextjs-notion-website',
+  name: 'Yann Solliard',
   domain: 'yannsolliard.ch',
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: 'Make your website easly with the nextjs-notion-website ;)',
+  description: '👋 Yann Solliard, Administrateur Système Linux passionné, expert en solutions open-source, avec une expertise en virtualisation, automatisation et gestion infrastructures IT.',
 
   // social usernames (optional)
   // twitter: '',
   github: 'slendymilky',
   linkedin: 'yann-solliard',
-  telegram: 'SlendyMilky',
-  discord: 'Serveur iMot3k',  /* Server Name */
-  discord_invite: 'https://discord.gg/4jNmg9qSJU', /* Discord invite link */
+  // telegram: '',
+  // discord: '',  /* Server Name */
+  // discord_invite: '', /* Discord invite link */
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
-  youtube: 'channel/UC-i4k6L0R70vkK0zE8Buj5Q', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
+  // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
@@ -42,10 +42,10 @@ export default siteConfig({
   isRedisEnabled: false,
 
   // uncomment gisucs config to enable gisucs, get these keys from https://giscus.app/
-  // giscusRepo: 'SlendyMilky/yannsolliard.ch',
-  // giscusRepoId: 'R_kgDOMAEJ5A',
-  // giscusCategory: 'Announcements',
-  // giscusCategoryId: 'DIC_kwDOMAEJ5M4Cfm5c',
+  giscusRepo: 'SlendyMilky/yannsolliard.ch',
+  giscusRepoId: 'R_kgDOMAEJ5A',
+  giscusCategory: 'Announcements',
+  giscusCategoryId: 'DIC_kwDOMAEJ5M4Cfm5c',
 
   // map of notion page IDs to URL paths (optional)
   // any pages defined here will override their default URL paths
@@ -61,16 +61,16 @@ export default siteConfig({
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
   navigationStyle: 'custom',
 
-  //navigationLinks: [
-  //   {
-  //     title: 'Contact',
-  //     pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
-  //   },
-  //   {
-  //     title: 'Bio',
-  //     pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
-  //   }
- //],
+  navigationLinks: [
+     {
+       title: 'Contact',
+       pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
+     },
+     {
+       title: 'Bio',
+       pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
+     }
+ ],
 
   isSearchEnabled: true
 })
