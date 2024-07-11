@@ -1,12 +1,17 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/legacy/image"
 import { useRouter } from 'next/router'
 
 import cs from 'classnames'
 import { PageBlock } from 'notion-types'
-import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
+import {
+  formatDate,
+  getBlockTitle,
+  getPageProperty,
+  normalizeTitle,
+  // parsePageId
+} from 'notion-utils'
 import BodyClassName from 'react-body-classname'
 import { NotionRenderer } from 'react-notion-x'
 import TweetEmbed from 'react-tweet-embed'
@@ -20,13 +25,16 @@ import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
-import { GitHubShareButton } from './GitHubShareButton'
 import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+import { PageFooter } from './PageFooter'
+import PageLink from "@/components/PageLink";
 import styles from './styles.module.css'
+import Link from 'next/link'
+
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -131,6 +139,23 @@ const propertyDateValue = (
   return defaultFn()
 }
 
+const propertySelectValue = (
+  { schema, value, key, pageHeader },
+  defaultFn: () => React.ReactNode
+) => {
+  value = normalizeTitle(value)
+
+  if (pageHeader && schema.type === 'multi_select' && value) {
+    return (
+      <Link href={`/tags/${value}`} key={key}>
+        {defaultFn()}
+      </Link>
+    );
+  }
+
+  return defaultFn()
+}
+
 const propertyTextValue = (
   { schema, pageHeader },
   defaultFn: () => React.ReactNode
@@ -142,11 +167,29 @@ const propertyTextValue = (
   return defaultFn()
 }
 
+const CalloutBlock = ({ block }) => {
+  const { properties, format } = block;
+  const colorClass = format?.block_color ? `notion-callout-${format.block_color}_background` : '';
+
+  return (
+    <div className={`notion-callout ${colorClass}`}>
+      {format?.page_icon && <div className="icon">{format.page_icon}</div>}
+      <div>
+        {properties?.title?.map((value, index) => (
+          <span key={index}>{value[0]}</span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const NotionPage: React.FC<types.PageProps> = ({
   site,
   recordMap,
   error,
-  pageId
+  pageId,
+  tagsPage,
+  propertyToFilterName
 }) => {
   const router = useRouter()
   const lite = useSearchParam('lite')
@@ -154,7 +197,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const components = React.useMemo(
     () => ({
       nextImage: Image,
-      nextLink: Link,
+      PageLink,
       Code,
       Collection,
       Equation,
@@ -164,7 +207,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
       Header: NotionPageHeader,
       propertyLastEditedTimeValue,
       propertyTextValue,
-      propertyDateValue
+      propertyDateValue,
+      propertySelectValue,
+      callout: CalloutBlock
     }),
     []
   )
@@ -200,6 +245,12 @@ export const NotionPage: React.FC<types.PageProps> = ({
     [block, recordMap, isBlogPost]
   )
 
+  const pageFooter = React.useMemo(
+    () => (
+      <PageFooter isBlogPost={isBlogPost} />
+    ),
+    [isBlogPost]
+  )
   const footer = React.useMemo(() => <Footer />, [])
 
   if (router.isFallback) {
@@ -210,7 +261,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
     return <Page404 site={site} pageId={pageId} error={error} />
   }
 
-  const title = getBlockTitle(block, recordMap) || site.name
+  const name = getBlockTitle(block, recordMap) || site.name
+  const title =
+    tagsPage && propertyToFilterName ? `${propertyToFilterName} ${name}` : name
 
   console.log('notion page', {
     isDev: config.isDev,
@@ -259,7 +312,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
       <NotionRenderer
         bodyClassName={cs(
           styles.notion,
-          pageId === site.rootNotionPageId && 'index-page'
+          pageId === site.rootNotionPageId && 'index-page',
+          tagsPage && 'tags-page'
         )}
         darkMode={isDarkMode}
         components={components}
@@ -274,14 +328,15 @@ export const NotionPage: React.FC<types.PageProps> = ({
         defaultPageIcon={config.defaultPageIcon}
         defaultPageCover={config.defaultPageCover}
         defaultPageCoverPosition={config.defaultPageCoverPosition}
+        linkTableTitleProperties={false}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageFooter={pageFooter}
         footer={footer}
+        pageTitle={tagsPage && propertyToFilterName ? title : undefined}
       />
-
-      <GitHubShareButton />
     </>
   )
 }

@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { NextRequest } from 'next/server'
-
 import { ImageResponse } from '@vercel/og'
 
 import { api, apiHost, rootNotionPageId } from '@/lib/config'
 import { NotionPageInfo } from '@/lib/types'
 
 const interRegularFontP = fetch(
-  new URL('../../public/fonts/Inter-Regular.ttf', import.meta.url)
+  new URL('../../public/fonts/Inter-Regular.woff2', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
-  new URL('../../public/fonts/Inter-SemiBold.ttf', import.meta.url)
+  new URL('../../public/fonts/Inter-SemiBold.woff2', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 export const config = {
@@ -67,19 +66,6 @@ export default async function OGImage(req: NextRequest) {
               width: '100%',
               height: '100%',
               objectFit: 'cover'
-              // TODO: satori doesn't support background-size: cover and seems to
-              // have inconsistent support for filter + transform to get rid of the
-              // blurred edges. For now, we'll go without a blur filter on the
-              // background, but Satori is still very new, so hopefully we can re-add
-              // the blur soon.
-
-              // backgroundImage: pageInfo.image
-              //   ? `url(${pageInfo.image})`
-              //   : undefined,
-              // backgroundSize: '100% 100%'
-              // TODO: pageInfo.imageObjectPosition
-              // filter: 'blur(8px)'
-              // transform: 'scale(1.05)'
             }}
           />
         )}
@@ -150,7 +136,6 @@ export default async function OGImage(req: NextRequest) {
               style={{
                 width: '100%',
                 height: '100%'
-                // transform: 'scale(1.04)'
               }}
             />
           </div>

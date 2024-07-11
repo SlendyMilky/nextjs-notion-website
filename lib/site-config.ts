@@ -1,4 +1,5 @@
 import * as types from './types'
+import { Repo } from '@giscus/react'
 
 export interface SiteConfig {
   rootNotionPageId: string
@@ -10,9 +11,12 @@ export interface SiteConfig {
   description?: string
   language?: string
 
+  discord?: string
+  discord_invite?:  string
   twitter?: string
   github?: string
   linkedin?: string
+  telegram?: string
   newsletter?: string
   youtube?: string
   zhihu?: string
@@ -33,6 +37,11 @@ export interface SiteConfig {
 
   navigationStyle?: types.NavigationStyle
   navigationLinks?: Array<NavigationLink>
+
+  giscusRepo?: Repo
+  giscusRepoId?: string
+  giscusCategory?: string
+  giscusCategoryId?: string
 }
 
 export interface NavigationLink {

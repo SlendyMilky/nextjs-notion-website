@@ -9,11 +9,14 @@ module.exports = withBundleAnalyzer({
     domains: [
       'www.notion.so',
       'notion.so',
+      'file.notion.so',
       'images.unsplash.com',
       'pbs.twimg.com',
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
-      'transitivebullsh.it'
+      'yannsolliard.ch',
+      'docs.slyc.ch'
+
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,

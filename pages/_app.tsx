@@ -20,13 +20,8 @@ import 'styles/notion.css'
 import 'styles/prism-theme.css'
 
 import { bootstrap } from '@/lib/bootstrap-client'
-import {
-  fathomConfig,
-  fathomId,
-  isServer,
-  posthogConfig,
-  posthogId
-} from '@/lib/config'
+import { fathomConfig, fathomId, isServer, posthogConfig, posthogId } from '@/lib/config'
+import { Analytics } from '@vercel/analytics/react'
 
 if (!isServer) {
   bootstrap()
@@ -61,5 +56,9 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return(
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>)
 }

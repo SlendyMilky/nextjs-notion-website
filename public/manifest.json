@@ -1,21 +1,21 @@
 {
-  "name": "Next.js Notion Starter Kit",
-  "short_name": "Starter Kit",
+  "name": "Yann Solliard",
+  "short_name": "Yann Solliard",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/favicon-32x32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "/favicon-128x128.png",
+      "src": "/apple-touch-icon.png",
       "type": "image/png",
-      "sizes": "128x128"
-    },
-    {
-      "src": "/favicon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "180x180"
     }
   ],
   "theme_color": "#000000",

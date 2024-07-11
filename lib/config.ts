@@ -15,6 +15,7 @@ import {
   PageUrlOverridesMap,
   Site
 } from './types'
+import { Repo } from '@giscus/react'
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
@@ -54,13 +55,22 @@ export const description: string = getSiteConfig('description', 'Notion Blog')
 export const language: string = getSiteConfig('language', 'en')
 
 // social accounts
+export const discord: string | null = getSiteConfig('discord', null)
+export const discord_invite: string | null = getSiteConfig('discord_invite', null)
 export const twitter: string | null = getSiteConfig('twitter', null)
 export const mastodon: string | null = getSiteConfig('mastodon', null)
 export const github: string | null = getSiteConfig('github', null)
 export const youtube: string | null = getSiteConfig('youtube', null)
 export const linkedin: string | null = getSiteConfig('linkedin', null)
+export const telegram: string | null = getSiteConfig('telegram', null)
 export const newsletter: string | null = getSiteConfig('newsletter', null)
 export const zhihu: string | null = getSiteConfig('zhihu', null)
+
+// giscus config
+export const giscusRepo: Repo | null = getSiteConfig('giscusRepo', null)
+export const giscusRepoId: string | null = getSiteConfig('giscusRepoId', null)
+export const giscusCategory: string | null = getSiteConfig('giscusCategory', null)
+export const giscusCategoryId: string | null = getSiteConfig('giscusCategoryId', null)
 
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {
@@ -110,7 +120,7 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
 )
 
 // Optional site search
-export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', true)
+export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', false)
 
 // ----------------------------------------------------------------------------
 

@@ -86,11 +86,25 @@
   border-color: #2795e9;
 }
 
+.discord .actionBgPane {
+  background: #5865f2;
+}
+.discord:hover {
+  border-color: #5865f2;
+}
+
 .linkedin .actionBgPane {
   background: #0077b5;
 }
 .linkedin:hover {
   border-color: #0077b5;
+}
+
+.telegram .actionBgPane {
+  background: #0088cc;
+}
+.telegram:hover {
+  border-color: #0088cc;
 }
 
 .github .actionBgPane {
@@ -128,14 +142,42 @@
   border-color: #777;
 }
 
-@media only screen and (max-width: 768px) {
-  .links {
-    position: relative;
-    left: 0.5em;
-    flex-wrap: wrap;
-  }
-
-  .action:last-child {
-    margin-right: 1em;
+@media (max-width: 1360px) {
+  .githubCorner {
+    display: none;
   }
 }
+
+.githubCorner:hover .octoArm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .githubCorner:hover .octoArm {
+    animation: none;
+  }
+
+  .githubCorner .octoArm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
