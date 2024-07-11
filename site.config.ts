@@ -2,25 +2,25 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '78fc5a4b88d74b0e824e29407e9f1ec1',
+  rootNotionPageId: '54d9d81207cc4e12b813cb35c4f5253e',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'nextjs-notion-website',
-  domain: 'yannsolliard.ch',
+  name: 'Documentation Slyc',
+  domain: 'docs.slyc.ch',
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: 'Make your website easly with the nextjs-notion-website ;)',
+  description: 'Site de documentation personnel hébergé via Notion',
 
   // social usernames (optional)
   // twitter: '',
   github: 'slendymilky',
   linkedin: 'yann-solliard',
-  telegram: 'SlendyMilky',
+  telegram: 'Slendy_Milky',
   discord: 'Serveur iMot3k',  /* Server Name */
   discord_invite: 'https://discord.gg/4jNmg9qSJU', /* Discord invite link */
   // mastodon: '#', // optional mastodon profile URL, provides link verification
