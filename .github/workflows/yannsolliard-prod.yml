@@ -7,7 +7,7 @@ on:
     branches:
       - yannsolliard.ch
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '5 12 * * *'
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
