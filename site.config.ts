@@ -2,7 +2,7 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '68416c45b17b4824a358baee52ddd25a',
+  rootNotionPageId: 'Labby-Auto-h-bergement-68416c45b17b4824a358baee52ddd25a',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
