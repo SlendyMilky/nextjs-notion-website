@@ -2,7 +2,7 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'Labby-Auto-h-bergement-68416c45b17b4824a358baee52ddd25a',
+  rootNotionPageId: '68416c45b17b4824a358baee52ddd25a',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -22,7 +22,7 @@ export default siteConfig({
   linkedin: 'yann-solliard',
   telegram: 'Slendy_Milky',
   discord: '» Labby.ch',  /* Server Name */
-  discord_invite: 'https://discord.gg/4jNmg9qSJU', /* Discord invite link */
+  discord_invite: 'https://discord.gg/RpgS68bh3B', /* Discord invite link */
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   youtube: '@labby_ch', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
