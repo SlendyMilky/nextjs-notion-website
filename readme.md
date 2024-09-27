@@ -1,98 +1,98 @@
 # Next.js Notion Starter Kit
 
-> The perfect starter kit for building websites with Next.js and Notion.
+> Le kit de démarrage parfait pour créer des sites web avec Next.js et Notion.
 
-[![Build Status](https://github.com/SlendyMilky/yannsolliard.ch/actions/workflows/build.yml/badge.svg)](https://github.com/SlendyMilky/yannsolliard.ch/actions/workflows/build.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
+[![Build Status](https://github.com/SlendyMilky/nextjs-notion-website/actions/workflows/production.yml/badge.svg)](https://github.com/SlendyMilky/nextjs-notion-website/actions/workflows/production.yml) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-## Intro
+## Introduction
 
-This repo is what I use to power my personal blog and portfolio site [transitivebullsh.it](https://transitivebullsh.it).
+Ce dépôt est utilisé pour alimenter mon blog personnel et mon site portfolio [transitivebullsh.it](https://transitivebullsh.it).
 
-It uses Notion as a CMS, [react-notion-x](https://github.com/NotionX/react-notion-x), [Next.js](https://nextjs.org/), and [Vercel](https://vercel.com).
+Il utilise Notion comme CMS, [react-notion-x](https://github.com/NotionX/react-notion-x), [Next.js](https://nextjs.org/), et [Vercel](https://vercel.com).
 
-## Features
+## Fonctionnalités
 
-- Setup only takes a few minutes ([single config file](./site.config.ts)) 💪
-- Robust support for Notion content via [react-notion-x](https://github.com/NotionX/react-notion-x)
-- Built using Next.js, TS, and React
-- Excellent page speeds
-- Smooth image previews
-- Automatic social images
-- Automatic pretty URLs
-- Automatic table of contents
-- Full support for dark mode
-- Quick search via CMD+K / CMD+P
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+- Configuration en quelques minutes ([fichier de configuration unique](./site.config.ts)) 💪
+- Support robuste pour le contenu Notion via [react-notion-x](https://github.com/NotionX/react-notion-x)
+- Construit avec Next.js, TypeScript, et React
+- Excellente vitesse de chargement des pages
+- Aperçus d'images fluides
+- Images sociales automatiques
+- URLs jolies automatiques
+- Table des matières automatique
+- Support complet du mode sombre
+- Recherche rapide via CMD+K / CMD+P
+- Responsive pour différents appareils
+- Optimisé pour Next.js et Vercel
 
-## Setup
+## Configuration
 
-**All config is defined in [site.config.ts](./site.config.ts).**
+**Toute la configuration est définie dans [site.config.ts](./site.config.ts).**
 
-This project requires a recent version of Node.js (we recommend >= 16).
+Ce projet nécessite une version récente de Node.js (nous recommandons >= 16).
 
-1. Fork / clone this repo
-2. Change a few values in [site.config.ts](./site.config.ts)
+1. Fork / clone ce dépôt
+2. Changez quelques valeurs dans [site.config.ts](./site.config.ts)
 3. `npm install`
-4. `npm run dev` to test locally
-5. `npm run deploy` to deploy to vercel 💪
+4. `npm run dev` pour tester localement
+5. `npm run deploy` pour déployer sur Vercel 💪
 
-I tried to make configuration as easy as possible — All you really need to do to get started is edit `rootNotionPageId`.
+Nous avons essayé de rendre la configuration aussi simple que possible — Tout ce que vous avez vraiment besoin de faire pour commencer est de modifier `rootNotionPageId`.
 
-We recommend duplicating the [default page](https://notion.so/7875426197cf461698809def95960ebf) as a starting point, but you can use any public notion page you want.
+Nous recommandons de dupliquer la [page par défaut](https://notion.so/7875426197cf461698809def95960ebf) comme point de départ, mais vous pouvez utiliser n'importe quelle page publique Notion que vous souhaitez.
 
-Make sure your root Notion page is **public** and then copy the link to your clipboard. Extract the last part of the URL that looks like `7875426197cf461698809def95960ebf`, which is your page's Notion ID.
+Assurez-vous que votre page Notion racine est **publique** puis copiez le lien dans votre presse-papiers. Extrayez la dernière partie de l'URL qui ressemble à `7875426197cf461698809def95960ebf`, qui est l'ID Notion de votre page.
 
-In order to find your Notion workspace ID (optional), just load any of your site's pages into your browser and open up the developer console. There will be a global variable that you can access called `block` which is the Notion data for the current page. If you enter `block.space_id`, it will print out your page's workspace ID.
+Pour trouver l'ID de votre espace de travail Notion (optionnel), chargez simplement n'importe quelle page de votre site dans votre navigateur et ouvrez la console développeur. Il y aura une variable globale appelée `block` qui est les données Notion pour la page actuelle. Si vous entrez `block.space_id`, cela affichera l'ID de votre espace de travail.
 
-I recommend setting up a collection on your home page that contains all of your articles / projects / content. There are no structural constraints on your Notion workspace, however, so feel free to add content as you normally would in Notion.
+Nous recommandons de configurer une collection sur votre page d'accueil qui contient tous vos articles / projets / contenus. Il n'y a pas de contraintes structurelles sur votre espace de travail Notion, donc n'hésitez pas à ajouter du contenu comme vous le feriez normalement dans Notion.
 
-## URL Paths
+## Chemins URL
 
-The app defaults to slightly different URL paths in dev vs prod (though pasting any dev pathname into prod will work and vice-versa).
+L'application utilise par défaut des chemins URL légèrement différents en dev et en prod (bien que coller n'importe quel chemin dev dans prod fonctionnera et vice-versa).
 
-In development, it will use `/nextjs-notion-blog-d1b5dcf8b9ff425b8aef5ce6f0730202` which is a slugified version of the page's title suffixed with its Notion ID. I've found that it's really useful to always have the Notion Page ID front and center during local development.
+En développement, elle utilisera `/nextjs-notion-blog-d1b5dcf8b9ff425b8aef5ce6f0730202` qui est une version slugifiée du titre de la page suffixée par son ID Notion. J'ai trouvé qu'il est vraiment utile d'avoir toujours l'ID de la page Notion bien en vue pendant le développement local.
 
-In production, it will use `/nextjs-notion-blog` which is a bit nicer as it gets rid of the extra ID clutter.
+En production, elle utilisera `/nextjs-notion-blog` qui est un peu plus propre car il se débarrasse de l'encombrement supplémentaire de l'ID.
 
-The mapping of Notion ID to slugified page titles is done automatically as part of the build process. Just keep in mind that if you plan on changing page titles over time, you probably want to make sure old links will still work, and we don't currently provide a solution for detecting old links aside from Next.js's built-in [support for redirects](https://nextjs.org/docs/api-reference/next.config.js/redirects).
+La correspondance de l'ID Notion aux titres de pages slugifiés est effectuée automatiquement dans le cadre du processus de build. Gardez simplement à l'esprit que si vous prévoyez de changer les titres de pages au fil du temps, vous voudrez probablement vous assurer que les anciens liens fonctionneront toujours, et nous ne fournissons actuellement pas de solution pour détecter les anciens liens à part le [support intégré de Next.js pour les redirections](https://nextjs.org/docs/api-reference/next.config.js/redirects).
 
-See [mapPageUrl](./lib/map-page-url.ts) and [getCanonicalPageId](https://github.com/NotionX/react-notion-x/blob/master/packages/notion-utils/src/get-canonical-page-id.ts) for more details.
+Voir [mapPageUrl](./lib/map-page-url.ts) et [getCanonicalPageId](https://github.com/NotionX/react-notion-x/blob/master/packages/notion-utils/src/get-canonical-page-id.ts) pour plus de détails.
 
-You can override the default slug generation on a per-page basis by adding a `Slug` text property to your database. Any page which has a `Slug` property will use that as its slug.
+Vous pouvez remplacer la génération de slug par défaut sur une base par page en ajoutant une propriété texte `Slug` à votre base de données. Toute page ayant une propriété `Slug` utilisera cela comme son slug.
 
-NOTE: if you have multiple pages in your workspace with the same slugified name, the app will throw an error letting you know that there are duplicate URL pathnames.
+NOTE : si vous avez plusieurs pages dans votre espace de travail avec le même nom slugifié, l'application renverra une erreur vous informant qu'il y a des doublons de chemins URL.
 
-## Preview Images
+## Images d'Aperçu
 
 <p align="center">
   <img alt="Example preview image" src="https://user-images.githubusercontent.com/552829/160142320-35343317-aa9e-4710-bcf7-67e5cdec586d.gif" width="458">
 </p>
 
-We use [next/image](https://nextjs.org/docs/api-reference/next/image) to serve images efficiently, with preview images optionally generated via [lqip-modern](https://github.com/transitive-bullshit/lqip-modern). This gives us extremely optimized image support for sexy smooth images.
+Nous utilisons [next/image](https://nextjs.org/docs/api-reference/next/image) pour servir les images efficacement, avec des images d'aperçu générées en option via [lqip-modern](https://github.com/transitive-bullshit/lqip-modern). Cela nous donne un support d'image extrêmement optimisé pour des images fluides et sexy.
 
-Preview images are **enabled by default**, but they can be slow to generate, so if you want to disable them, set `isPreviewImageSupportEnabled` to `false` in `site.config.ts`.
+Les images d'aperçu sont **activées par défaut**, mais elles peuvent être lentes à générer, donc si vous voulez les désactiver, définissez `isPreviewImageSupportEnabled` à `false` dans `site.config.ts`.
 
 ### Redis
 
-If you want to cache generated preview images to speed up subsequent builds, you'll need to first set up an external [Redis](https://redis.io) data store. To enable redis caching, set `isRedisEnabled` to `true` in `site.config.ts` and then set `REDIS_HOST` and `REDIS_PASSWORD` environment variables to point to your redis instance.
+Si vous souhaitez mettre en cache les images d'aperçu générées pour accélérer les builds suivants, vous devrez d'abord configurer un magasin de données externe [Redis](https://redis.io). Pour activer la mise en cache redis, définissez `isRedisEnabled` à `true` dans `site.config.ts` puis définissez les variables d'environnement `REDIS_HOST` et `REDIS_PASSWORD` pour pointer vers votre instance redis.
 
-You can do this locally by adding a `.env` file:
+Vous pouvez le faire localement en ajoutant un fichier `.env` :
 
 ```bash
 REDIS_HOST='TODO'
 REDIS_PASSWORD='TODO'
 ```
 
-If you're not sure which Redis provider to use, we recommend [Redis Labs](https://redis.com), which provides a free plan.
+Si vous ne savez pas quel fournisseur Redis utiliser, nous recommandons [Redis Labs](https://redis.com), qui propose un plan gratuit.
 
-Note that preview images and redis caching are both optional features. If you’d rather not deal with them, just disable them in your site config.
+Notez que les images d'aperçu et la mise en cache redis sont des fonctionnalités optionnelles. Si vous préférez ne pas les utiliser, désactivez-les simplement dans votre configuration de site.
 
 ## Styles
 
-All CSS styles that customize Notion content are located in [styles/notion.css](./styles/notion.css). They mainly target global CSS classes exported by react-notion-x [styles.css](https://github.com/NotionX/react-notion-x/blob/master/packages/react-notion-x/src/styles.css).
+Tous les styles CSS qui personnalisent le contenu Notion sont situés dans [styles/notion.css](./styles/notion.css). Ils ciblent principalement les classes CSS globales exportées par [react-notion-x styles.css](https://github.com/NotionX/react-notion-x/blob/master/packages/react-notion-x/src/styles.css).
 
-Every notion block gets its own unique classname, so you can target individual blocks like this:
+Chaque bloc notion obtient sa propre classe unique, vous pouvez donc cibler des blocs individuels comme ceci :
 
 ```css
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
@@ -100,7 +100,7 @@ Every notion block gets its own unique classname, so you can target individual b
 }
 ```
 
-## Dark Mode
+## Mode Sombre
 
 <p align="center">
   <img alt="Light Mode" src="https://transitive-bs.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F83ea9f0f-4761-4c0b-b53e-1913627975fc%2Ftransitivebullsh.it_-opt.jpg?table=block&id=ed7e8f60-c6d1-449e-840b-5c7762505c44&spaceId=fde5ac74-eea3-4527-8f00-4482710e1af3&width=2000&userId=&cache=v2" width="45%">
@@ -108,64 +108,64 @@ Every notion block gets its own unique classname, so you can target individual b
   <img alt="Dark Mode" src="https://transitive-bs.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc0839d6c-7141-48df-8afd-69b27fed84aa%2Ftransitivebullsh.it__(1)-opt.jpg?table=block&id=23b11fe5-d6df-422d-9674-39cf7f547523&spaceId=fde5ac74-eea3-4527-8f00-4482710e1af3&width=2000&userId=&cache=v2" width="45%">
 </p>
 
-Dark mode is fully supported and can be toggled via the sun / moon icon in the footer.
+Le mode sombre est entièrement pris en charge et peut être activé via l'icône soleil / lune dans le pied de page.
 
-## Automatic Social Images
+## Images Sociales Automatiques
 
 <p align="center">
   <img alt="Example social image" src="https://user-images.githubusercontent.com/552829/162001133-34d4cf24-123a-4569-a540-f683b22830d1.jpeg" width="600">
 </p>
 
-All Open Graph and social meta tags are generated from your Notion content, which makes social sharing look professional by default.
+Toutes les balises Open Graph et les méta tags sociaux sont générés à partir de votre contenu Notion, ce qui rend le partage social professionnel par défaut.
 
-Social images are generated automatically using [Vercel OG Image Generation](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation). You can tweak the default React template for social images by editing [api/social-images.tsx](./pages/api/social-image.tsx).
+Les images sociales sont générées automatiquement en utilisant [Vercel OG Image Generation](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation). Vous pouvez ajuster le modèle React par défaut pour les images sociales en éditant [api/social-images.tsx](./pages/api/social-image.tsx).
 
-You can view an example social image live in production [here](https://transitivebullsh.it/api/social-image?id=dfc7f709-ae3e-42c6-9292-f6543d5586f0).
+Vous pouvez voir un exemple d'image sociale en direct en production [ici](https://transitivebullsh.it/api/social-image?id=dfc7f709-ae3e-42c6-9292-f6543d5586f0).
 
-## Automatic Table of Contents
+## Table des Matières Automatique
 
 <p align="center">
   <img alt="Smooth ToC Scrollspy" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcb2df62d-9028-440b-964b-117711450921%2Ftoc2.gif?table=block&id=d7e9951b-289c-4ff2-8b82-b0a61fe260b1&cache=v2" width="240">
 </p>
 
-By default, every article page will have a table of contents displayed as an `aside` on desktop. It uses **scrollspy** logic to automatically update the current section as the user scrolls through your document, and makes it really easy to jump between different sections.
+Par défaut, chaque page d'article aura une table des matières affichée comme un `aside` sur le bureau. Elle utilise la logique **scrollspy** pour mettre à jour automatiquement la section actuelle lorsque l'utilisateur fait défiler votre document, et facilite grandement la navigation entre les différentes sections.
 
-If a page has less than `minTableOfContentsItems` (default 3), the table of contents will be hidden. It is also hidden on the index page and if the browser window is too small.
+Si une page a moins de `minTableOfContentsItems` (par défaut 3), la table des matières sera cachée. Elle est également cachée sur la page d'index et si la fenêtre du navigateur est trop petite.
 
-This table of contents uses the same logic that Notion uses for its built-in Table of Contents block (see [getPageTableOfContents](https://github.com/NotionX/react-notion-x/blob/master/packages/notion-utils/src/get-page-table-of-contents.ts) for the underlying logic).
+Cette table des matières utilise la même logique que Notion utilise pour son bloc Table des Matières intégré (voir [getPageTableOfContents](https://github.com/NotionX/react-notion-x/blob/master/packages/notion-utils/src/get-page-table-of-contents.ts) pour la logique sous-jacente).
 
-## Responsive
+## Réactivité
 
 <p align="center">
   <img alt="Mobile article page" src="https://user-images.githubusercontent.com/552829/160132983-c2dd5830-80b3-4a0e-a8f1-abab5dbeed11.jpg" width="300">
 </p>
 
-All pages are designed to be responsive across common device sizes.
+Toutes les pages sont conçues pour être responsives sur les tailles d'appareils courantes.
 
 ## Analytics
 
-Analytics are an optional feature that are easy to enable if you want.
+Les analyses sont une fonctionnalité optionnelle facile à activer si vous le souhaitez.
 
 ### Fathom Analytics
 
-[Fathom](https://usefathom.com/ref/42TFOZ) provides a lightweight alternative to Google Analytics.
+[Fathom](https://usefathom.com/ref/42TFOZ) fournit une alternative légère à Google Analytics.
 
-To enable, just add a `NEXT_PUBLIC_FATHOM_ID` environment variable, which will only be used in production.
+Pour activer, ajoutez simplement une variable d'environnement `NEXT_PUBLIC_FATHOM_ID`, qui ne sera utilisée qu'en production.
 
 ### PostHog Analytics
 
-[PostHog](https://posthog.com/) provides a lightweight, **open source** alternative to Google Analytics.
+[PostHog](https://posthog.com/) fournit une alternative légère et **open source** à Google Analytics.
 
-To enable, just add a `NEXT_PUBLIC_POSTHOG_ID` environment variable, which will only be used in production.
+Pour activer, ajoutez simplement une variable d'environnement `NEXT_PUBLIC_POSTHOG_ID`, qui ne sera utilisée qu'en production.
 
-## Environment Variables
+## Variables d'Environnement
 
-If you're using Redis, analytics, or any other feature which requires environment variables, then you'll need to [add them to your Vercel project](https://vercel.com/docs/concepts/projects/environment-variables).
+Si vous utilisez Redis, des analyses, ou toute autre fonctionnalité nécessitant des variables d'environnement, vous devrez [les ajouter à votre projet Vercel](https://vercel.com/docs/concepts/projects/environment-variables).
 
-If you want to test your redis builds with GitHub Actions, then you'll need to edit the [default build action](./.github/workflows/build.yml) to add `REDIS_HOST` and `REDIS_PASSWORD`. Here is an [example from my personal branch](https://github.com/SlendyMilky/yannsolliard.ch/blob/transitive-bullshit/.github/workflows/build.yml#L17-L21). You'll also need to add these environment variables to your GitHub repo as [repository secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+Si vous souhaitez tester vos builds redis avec GitHub Actions, vous devrez éditer l'[action de build par défaut](./.github/workflows/build.yml) pour ajouter `REDIS_HOST` et `REDIS_PASSWORD`. Voici un [exemple de ma branche personnelle](https://github.com/SlendyMilky/yannsolliard.ch/blob/transitive-bullshit/.github/workflows/build.yml#L17-L21). Vous devrez également ajouter ces variables d'environnement à votre dépôt GitHub en tant que [secrets de dépôt](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 
 ## License
 
 MIT © [Travis Fischer](https://transitivebullsh.it)
 
-Support his open source work by <a href="https://twitter.com/transitive_bs">following his twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
+Soutenez son travail open source en <a href="https://twitter.com/transitive_bs">suivant son twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
