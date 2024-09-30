@@ -160,7 +160,7 @@
   overflow: visible;
   box-shadow: rgb(15 15 15 / 30%) 0px 1px 4px 2px;
   background: var(--bg-color-1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .notion-collection-card-cover img {
@@ -179,7 +179,7 @@
 }
 
 .notion-collection-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(0.5deg);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -317,7 +317,7 @@
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 0 0.1rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease, background-size 0.3s ease;
 }
 
 .notion-link:focus,
