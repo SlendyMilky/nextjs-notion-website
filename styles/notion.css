@@ -201,7 +201,7 @@
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
-  text-align: center;
+  text-align: left; /* Modifier de center à left */
 }
 
 
@@ -242,6 +242,12 @@
 @media only screen and (max-width: 600px) {
   .notion-search-button {
     display: none !important;
+  }
+
+  .notion-h1,
+  .notion-h2,
+  .notion-h3 {
+    text-align: center;
   }
 }
 
