@@ -160,6 +160,7 @@
   overflow: visible;
   box-shadow: rgb(15 15 15 / 30%) 0px 1px 4px 2px;
   background: var(--bg-color-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .notion-collection-card-cover img {
@@ -175,6 +176,11 @@
 
 .notion-collection-card:hover .notion-collection-card-cover {
   filter: brightness(120%);
+}
+
+.notion-collection-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .notion-collection-card-body {
