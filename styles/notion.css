@@ -311,6 +311,7 @@
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 0 0.1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .notion-link:focus,
@@ -322,6 +323,8 @@
   background-size: 100% 0.1rem;
   transition-property: background-position, background-size;
   transition-duration: 300ms;
+  color: #b439df; /* Couleur plus vive */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 
