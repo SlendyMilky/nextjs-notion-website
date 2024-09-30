@@ -33,7 +33,7 @@
 
 .notion-table-of-contents {
   list-style-type: none; /* Supprime les puces de la liste */
-  padding-left: 0;
+  padding: 0;
   margin: 0;
   border-left: 2px solid;
   border-image: linear-gradient(180deg, #d53e85, #832a7c) 1;
@@ -46,14 +46,6 @@
   transition: background-color 0.3s, border-left-color 0.3s;
 }
 
-.notion-table-of-contents-item-body {
-  padding: 8px 0;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
 .notion-table-of-contents-item:before {
   content: '';
   position: absolute;
@@ -64,17 +56,9 @@
   z-index: -1;
 }
 
-.notion-table-of-contents-item-indent-level-0:before {
-  left: -12px; /* Ajuste à la barre principale */
-}
-
-.notion-table-of-contents-item-indent-level-1:before {
-  left: -24px;
-}
-
-.notion-table-of-contents-item-indent-level-2:before {
-  left: -36px;
-}
+.notion-table-of-contents-item-indent-level-0:before { left: -12px; }
+.notion-table-of-contents-item-indent-level-1:before { left: -24px; }
+.notion-table-of-contents-item-indent-level-2:before { left: -36px; }
 
 .notion-table-of-contents-active-item {
   border-left: 2px solid;
