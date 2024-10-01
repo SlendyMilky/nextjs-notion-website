@@ -61,16 +61,12 @@ export default siteConfig({
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
   navigationStyle: 'custom',
 
-  /* navigationLinks: [
+  navigationLinks: [
      {
        title: 'Contact',
-       pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
-     },
-     {
-       title: 'Bio',
-       pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
+       pageId: '1124a8a1f92580c9bdccec75e36c386d'
      }
- ], */
+ ],
 
   isSearchEnabled: true
 })
