@@ -194,7 +194,7 @@
   text-align: justify;
   font-size: 1em;
   border-left: 4px solid;
-  border-image: linear-gradient(180deg, #d53e85, #832a7c) 1;
+  border-image: linear-gradient(192deg, #6ee1f5, #6456f0) 1;
 }
 
 .notion-h1,
@@ -474,7 +474,7 @@
 .dark-mode .notion-gray_background {
   background-image: linear-gradient(
     135deg,
-    var(--bg-color-dark, #2b2b2b), /* Utilisez une couleur de fond plus sombre spécifiée ou une valeur par défaut */
+    var(--bg-color-dark, #2b2b2b),
     #3a3a3a 0%,
     #4b4b4b 100%,
     var(--bg-color-dark, #2b2b2b)

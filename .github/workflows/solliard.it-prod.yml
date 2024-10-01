@@ -1,13 +1,11 @@
-name: yannsolliard.ch - Vercel Deployment Production
+name: solliard.it - Vercel Deployment Production
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_YANNSOLLIARD }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_SOLLIARDIT }}
 on:
   push:
     branches:
-      - yannsolliard.ch
-  schedule:
-    - cron: '5 12 * * *'
+      - solliard.it
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest

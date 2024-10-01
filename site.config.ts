@@ -2,19 +2,19 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '0be05c037a5a41f481f85d0ff75555ef',
+  rootNotionPageId: '1124a8a1f925801095eef422091d45e6',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Yann Solliard',
-  domain: 'yannsolliard.ch',
+  name: 'Solliard IT Solutions',
+  domain: 'solliard.it',
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: '👋 Yann Solliard, Administrateur Système Linux passionné, expert en solutions open-source, avec une expertise en virtualisation, automatisation et gestion infrastructures IT.',
+  description: 'Solliard IT Solutions, une entreprise spécialisée dans la gestion de projets IT et la création de sites web.',
 
   // social usernames (optional)
   // twitter: '',
@@ -42,10 +42,10 @@ export default siteConfig({
   isRedisEnabled: false,
 
   // uncomment gisucs config to enable gisucs, get these keys from https://giscus.app/
-  giscusRepo: 'SlendyMilky/yannsolliard.ch',
-  giscusRepoId: 'R_kgDOMVInGA',
-  giscusCategory: 'yannsolliard.ch',
-  giscusCategoryId: 'DIC_kwDOMVInGM4Cgun-',
+  // giscusRepo: 'SlendyMilky/yannsolliard.ch',
+  // giscusRepoId: 'R_kgDOMVInGA',
+  // giscusCategory: 'yannsolliard.ch',
+  // giscusCategoryId: 'DIC_kwDOMVInGM4Cgun-',
 
   // map of notion page IDs to URL paths (optional)
   // any pages defined here will override their default URL paths
@@ -61,7 +61,7 @@ export default siteConfig({
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
   navigationStyle: 'custom',
 
-  navigationLinks: [
+  /* navigationLinks: [
      {
        title: 'Contact',
        pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
@@ -70,7 +70,7 @@ export default siteConfig({
        title: 'Bio',
        pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
      }
- ],
+ ], */
 
   isSearchEnabled: true
 })
