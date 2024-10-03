@@ -63,7 +63,7 @@ export default siteConfig({
 
   navigationLinks: [
      {
-       title: 'Contact',
+       title: 'Contact ☎️',
        pageId: '1124a8a1f92580c9bdccec75e36c386d'
      }
  ],
