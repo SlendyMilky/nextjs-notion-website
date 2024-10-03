@@ -244,6 +244,8 @@
     display: none !important;
   }
 
+  .notion-h-title,
+  .notion-block-1124a8a1f92580d4b212d68cee146cc4,
   .notion-h1,
   .notion-h2,
   .notion-h3 {
@@ -575,7 +577,6 @@
     background: hsla(203, 8%, 20%, 0.8);
   }
 }
-
 .notion-row {
   overflow: unset;
 }
@@ -719,4 +720,36 @@ ul:not(:has(> li)) {
   border: 1px solid;
   border-color: teal;
   border-radius: 10px;
+}
+
+
+.notion-block-1144a8a1f92580c194d8e0fbd7bed021,
+.notion-block-1124a8a1f9258052a046e9c693fd70c6,
+.notion-block-1124a8a1f925807b970ffddbf13c9962,
+.notion-block-1124a8a1f92580d4b212d68cee146cc4,
+.notion-block-1124a8a1f925808e9531ff1206ee501f,
+.notion-block-1124a8a1f92580629334d7e98a82f080,
+.notion-block-1124a8a1f925802ba755cefa6b5336c5 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .notion-block-1144a8a1f92580a48b2de6a577915c03,
+  .notion-block-1144a8a1f92580138750d941c1ff6429 {
+    display: none;
+  }
+
+  .notion-list-disc.notion-block-1144a8a1f92580e2a1e9c717bb7e963f,
+  .notion-list-disc.notion-block-1144a8a1f925803f8e2bfeef57cd31dc,
+  .notion-list-disc.notion-block-1144a8a1f92580ef954ff1b548eaff3c {
+    text-align: center;
+  }
+}
+
+.notion-block-1144a8a1f92580e2a1e9c717bb7e963f,
+.notion-block-1144a8a1f925803f8e2bfeef57cd31dc,
+.notion-block-1144a8a1f92580ef954ff1b548eaff3c {
+  text-align: left;
 }
