@@ -65,6 +65,10 @@ export default siteConfig({
      {
        title: 'Contact ☎️',
        pageId: '1124a8a1f92580c9bdccec75e36c386d'
+     },
+     {
+       title: 'Services 💻',
+       pageId: '1144a8a1f925808bb1a5e6647cbf5152'
      }
  ],
 
