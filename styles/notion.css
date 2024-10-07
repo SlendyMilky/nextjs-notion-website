@@ -758,11 +758,10 @@ ul:not(:has(> li)) {
 
 @media only screen and (max-width: 513px) {
   .notion-gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-    grid-gap: 2.5vmin;
-    gap: 2.5vmin;
-    border-top: none;
-    text-align: center;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    zoom: 1.4;
   }
 }
+
+
 
