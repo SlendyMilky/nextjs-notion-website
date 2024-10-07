@@ -130,6 +130,8 @@
   text-align: center;
 }
 
+
+
 .notion-gallery-grid .notion-page-icon-inline {
   margin-left: 2px;
   margin-right: 6px;
@@ -753,3 +755,14 @@ ul:not(:has(> li)) {
 .notion-block-1144a8a1f92580ef954ff1b548eaff3c {
   text-align: left;
 }
+
+@media only screen and (max-width: 513px) {
+  .notion-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    grid-gap: 2.5vmin;
+    gap: 2.5vmin;
+    border-top: none;
+    text-align: center;
+  }
+}
+
