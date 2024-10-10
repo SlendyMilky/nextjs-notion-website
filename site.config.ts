@@ -69,6 +69,10 @@ export default siteConfig({
      {
        title: 'Services 💻',
        pageId: '1144a8a1f925808bb1a5e6647cbf5152'
+     },
+     {
+       title: 'Aide 🆘',
+       pageId: '11b4a8a1f925800aa784d1fd6a042bf4'
      }
  ],
 

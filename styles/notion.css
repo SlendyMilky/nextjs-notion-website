@@ -768,7 +768,188 @@ ul:not(:has(> li)) {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     zoom: 1.4;
   }
+
+  .title {
+    display: none;
+  }
+
+  .notion-nav-header-rhs.breadcrumbs {
+    
+  }
 }
 
+.notion-block-11b4a8a1f92580d39372c835ad8db863,
+.notion-block-11b4a8a1f92580679421c75cebb0b249,
+.notion-block-11b4a8a1f9258072b979daf5ed72eb57,
+.notion-block-11b4a8a1f925804e9da0ef25ee07adb1,
+.notion-block-11b4a8a1f92580c194fbeada8dd1b0a4,
+.notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1,
+.notion-block-11b4a8a1f9258027b20ae009d4159fe1 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color, #fff);
+  background-color: var(--button-bg-color, #007bff);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
 
+.notion-block-11b4a8a1f92580d39372c835ad8db863:before,
+.notion-block-11b4a8a1f925804e9da0ef25ee07adb1:before,
+.notion-block-11b4a8a1f92580c194fbeada8dd1b0a4:before,
+.notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1:before,
+.notion-block-11b4a8a1f9258027b20ae009d4159fe1:before,
+.notion-block-11b4a8a1f92580679421c75cebb0b249:before,
+.notion-block-11b4a8a1f9258072b979daf5ed72eb57:before {
+  content: '📥';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
 
+.notion-block-11b4a8a1f92580d39372c835ad8db863:hover,
+.notion-block-11b4a8a1f925804e9da0ef25ee07adb1:hover,
+.notion-block-11b4a8a1f92580c194fbeada8dd1b0a4:hover,
+.notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1:hover,
+.notion-block-11b4a8a1f9258027b20ae009d4159fe1:hover,
+.notion-block-11b4a8a1f92580679421c75cebb0b249:hover,
+.notion-block-11b4a8a1f9258072b979daf5ed72eb57:hover {
+  background-color: var(--button-hover-bg-color, #0056b3);
+  transform: scale(1.05);
+}
+
+.notion-block-11b4a8a1f92580d39372c835ad8db863 .notion-link,
+.notion-block-11b4a8a1f925804e9da0ef25ee07adb1 .notion-link,
+.notion-block-11b4a8a1f92580c194fbeada8dd1b0a4 .notion-link,
+.notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1 .notion-link,
+.notion-block-11b4a8a1f9258027b20ae009d4159fe1 .notion-link,
+.notion-block-11b4a8a1f92580679421c75cebb0b249 .notion-link,
+.notion-block-11b4a8a1f9258072b979daf5ed72eb57 .notion-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+  transition: none;
+}
+
+.dark-mode .notion-block-11b4a8a1f92580d39372c835ad8db863,
+.dark-mode .notion-block-11b4a8a1f925804e9da0ef25ee07adb1,
+.dark-mode .notion-block-11b4a8a1f92580c194fbeada8dd1b0a4,
+.dark-mode .notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1,
+.dark-mode .notion-block-11b4a8a1f9258027b20ae009d4159fe1,
+.dark-mode .notion-block-11b4a8a1f92580679421c75cebb0b249,
+.dark-mode .notion-block-11b4a8a1f9258072b979daf5ed72eb57 {
+  --text-color: #fff;
+  --button-bg-color: #1a73e8;
+  --button-hover-bg-color: #1558b0;
+}
+
+.light-mode .notion-block-11b4a8a1f92580d39372c835ad8db863,
+.light-mode .notion-block-11b4a8a1f925804e9da0ef25ee07adb1,
+.light-mode .notion-block-11b4a8a1f92580c194fbeada8dd1b0a4,
+.light-mode .notion-block-11b4a8a1f92580a8b223d89a0bcc9ed1,
+.light-mode .notion-block-11b4a8a1f9258027b20ae009d4159fe1,
+.light-mode .notion-block-11b4a8a1f92580679421c75cebb0b249,
+.light-mode .notion-block-11b4a8a1f9258072b979daf5ed72eb57 {
+  --text-color: #000;
+  --button-bg-color: #e0e0e0;
+  --button-hover-bg-color: #bdbdbd;
+}
+
+.notion-block-11b4a8a1f92580af8be3dd0d4c0c3a7c::before,
+.notion-block-11b4a8a1f925800ba21add89c24990e3::before,
+.notion-block-11b4a8a1f92580d1b7f9f3930a6e1a57::before {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
+
+.notion-block-11b4a8a1f92580d1b7f9f3930a6e1a57::before {
+  content: '🪟'
+}
+
+.notion-block-11b4a8a1f925800ba21add89c24990e3::before {
+  content: '🍎'
+}
+
+.notion-block-11b4a8a1f92580af8be3dd0d4c0c3a7c::before {
+  content: '🤖'
+}
+
+.notion-block-11b4a8a1f925803bbaa5ef0a96448648 {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color, #fff);
+  background-color: var(--button-bg-color, #007bff);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.notion-block-11b4a8a1f925803bbaa5ef0a96448648:before {
+  content: '📸 QR de connexion';
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.notion-block-11b4a8a1f925803bbaa5ef0a96448648 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color, #fff);
+  background-color: var(--button-bg-color, #007bff);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+              0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.notion-block-11b4a8a1f925803bbaa5ef0a96448648 img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+              0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Styles pour le mode sombre */
+.dark-mode .notion-block-11b4a8a1f925803bbaa5ef0a96448648 {
+  --text-color: #fff;
+  --button-bg-color: #1a73e8;
+}
+
+/* Styles pour le mode clair */
+.light-mode .notion-block-11b4a8a1f925803bbaa5ef0a96448648 {
+  --text-color: #000;
+  --button-bg-color: #e0e0e0;
+}
