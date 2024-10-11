@@ -14,7 +14,8 @@ export default siteConfig({
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: 'Solliard IT Solutions, une entreprise spécialisée dans la gestion de projets IT et la création de sites web.',
+  description:
+    'Solliard IT Solutions, une entreprise spécialisée dans la gestion de projets IT et la création de sites web.',
 
   // social usernames (optional)
   // twitter: '',
@@ -62,19 +63,19 @@ export default siteConfig({
   navigationStyle: 'custom',
 
   navigationLinks: [
-     {
-       title: 'Contact ☎️',
-       pageId: '1124a8a1f92580c9bdccec75e36c386d'
-     },
-     {
-       title: 'Services 💻',
-       pageId: '1144a8a1f925808bb1a5e6647cbf5152'
-     },
-     {
-       title: 'Aide 🆘',
-       pageId: '11b4a8a1f925800aa784d1fd6a042bf4'
-     }
- ],
+    {
+      title: 'Contact ☎️',
+      pageId: '1124a8a1f92580c9bdccec75e36c386d'
+    },
+    {
+      title: 'Services 💻',
+      pageId: '1144a8a1f925808bb1a5e6647cbf5152'
+    },
+    {
+      title: 'Aide 🆘',
+      pageId: '11b4a8a1f925800aa784d1fd6a042bf4'
+    }
+  ],
 
   isSearchEnabled: true
 })

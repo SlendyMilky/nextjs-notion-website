@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
 import Link from 'next/link'
+import React, { FC } from 'react'
 
 type NextLinkProps = {
   href: string
@@ -9,12 +9,10 @@ type NextLinkProps = {
 
 const PageLink: FC<NextLinkProps> = ({ href, className, children }) => {
   return (
-    (<Link href={href} passHref className={className}>
-
+    <Link href={href} passHref className={className}>
       {children}
-
-    </Link>)
-  );
+    </Link>
+  )
 }
 
 export default PageLink

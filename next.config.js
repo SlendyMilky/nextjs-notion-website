@@ -18,7 +18,6 @@ module.exports = withBundleAnalyzer({
       'docs.slyc.ch',
       'solliard.it',
       'labby.ch'
-
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
