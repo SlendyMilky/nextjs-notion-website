@@ -16,7 +16,6 @@ module.exports = withBundleAnalyzer({
       's3.us-west-2.amazonaws.com',
       'yannsolliard.ch',
       'docs.slyc.ch'
-
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,

@@ -1,4 +1,5 @@
-import { getAllPagesInSpace, uuidToId, getPageProperty } from 'notion-utils'
+import ExpiryMap from 'expiry-map'
+import { getAllPagesInSpace, getPageProperty, uuidToId } from 'notion-utils'
 import pMemoize from 'p-memoize'
 
 import * as config from './config'
@@ -6,7 +7,6 @@ import * as types from './types'
 import { includeNotionIdInUrls } from './config'
 import { getCanonicalPageId } from './get-canonical-page-id'
 import { notion } from './notion-api'
-import ExpiryMap from 'expiry-map'
 
 const uuid = !!includeNotionIdInUrls
 const cache = new ExpiryMap(10000)
@@ -51,7 +51,9 @@ async function getAllPagesImpl(
       }
 
       const block = recordMap.block[pageId]?.value
-      if (!(getPageProperty<boolean|null>('Public', block, recordMap) ?? true)) {
+      if (
+        !(getPageProperty<boolean | null>('Public', block, recordMap) ?? true)
+      ) {
         return map
       }
 

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
-import Image from "next/legacy/image"
+import Image from 'next/legacy/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import cs from 'classnames'
@@ -9,8 +10,7 @@ import {
   formatDate,
   getBlockTitle,
   getPageProperty,
-  normalizeTitle,
-  // parsePageId
+  normalizeTitle // parsePageId
 } from 'notion-utils'
 import BodyClassName from 'react-body-classname'
 import { NotionRenderer } from 'react-notion-x'
@@ -19,6 +19,7 @@ import { useSearchParam } from 'react-use'
 
 import * as config from '@/lib/config'
 import * as types from '@/lib/types'
+import PageLink from '@/components/PageLink'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
@@ -29,12 +30,9 @@ import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
-import { PageHead } from './PageHead'
 import { PageFooter } from './PageFooter'
-import PageLink from "@/components/PageLink";
+import { PageHead } from './PageHead'
 import styles from './styles.module.css'
-import Link from 'next/link'
-
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -150,7 +148,7 @@ const propertySelectValue = (
       <Link href={`/tags/${value}`} key={key}>
         {defaultFn()}
       </Link>
-    );
+    )
   }
 
   return defaultFn()
@@ -168,20 +166,22 @@ const propertyTextValue = (
 }
 
 const CalloutBlock = ({ block }) => {
-  const { properties, format } = block;
-  const colorClass = format?.block_color ? `notion-callout-${format.block_color}_background` : '';
+  const { properties, format } = block
+  const colorClass = format?.block_color
+    ? `notion-callout-${format.block_color}_background`
+    : ''
 
   return (
     <div className={`notion-callout ${colorClass}`}>
-      {format?.page_icon && <div className="icon">{format.page_icon}</div>}
+      {format?.page_icon && <div className='icon'>{format.page_icon}</div>}
       <div>
         {properties?.title?.map((value, index) => (
           <span key={index}>{value[0]}</span>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const NotionPage: React.FC<types.PageProps> = ({
   site,
@@ -246,9 +246,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const pageFooter = React.useMemo(
-    () => (
-      <PageFooter isBlogPost={isBlogPost} />
-    ),
+    () => <PageFooter isBlogPost={isBlogPost} />,
     [isBlogPost]
   )
   const footer = React.useMemo(() => <Footer />, [])

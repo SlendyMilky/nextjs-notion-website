@@ -17,7 +17,9 @@ import { getPreviewImageMap } from './preview-images'
  * @return {boolean} - Returns true if the block is of type 'file' or 'pdf', false otherwise.
  */
 function isBlockOfTypeFile(block: any): boolean {
-  return block.value && (block.value.type === 'file' || block.value.type === 'pdf')
+  return (
+    block.value && (block.value.type === 'file' || block.value.type === 'pdf')
+  )
 }
 
 /**
@@ -135,6 +137,6 @@ export async function search(params: SearchParams): Promise<SearchResults> {
   }
   return notion.fetch<SearchResults>({
     endpoint: 'search',
-    body,
-  });
+    body
+  })
 }

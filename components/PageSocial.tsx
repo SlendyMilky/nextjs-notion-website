@@ -1,20 +1,20 @@
 import * as React from 'react'
 
 import cs from 'classnames'
+import {
+  /* Font Awesome Icons */
+  FaDiscord,
+  FaGithub,
+  FaLinkedin, //FaMastodon,
+  FaTelegram,
+  FaTwitter,
+  FaYoutube
+} from 'react-icons/fa'
 
 import * as config from '@/lib/config'
 
 import styles from './PageSocial.module.css'
-import 
-{ /* Font Awesome Icons */
-  FaDiscord,
-  FaYoutube,
-  FaTwitter,
-  //FaMastodon,
-  FaTelegram,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+
 interface SocialLink {
   name: string
   title: string
@@ -27,55 +27,43 @@ const socialLinks: SocialLink[] = [
     name: 'discord',
     href: `${config.discord_invite}`, // Invite URL of the Discord server
     title: `${config.discord}`, // Name of the Discord server
-    icon: (
-      <FaDiscord />
-    )
+    icon: <FaDiscord />
   },
 
   config.youtube && {
     name: 'youtube',
     href: `https://www.youtube.com/${config.youtube}`,
     title: `YouTube ${config.youtube}`,
-    icon: (
-      <FaYoutube />
-    )
+    icon: <FaYoutube />
   },
 
   config.twitter && {
     name: 'twitter',
     href: `https://twitter.com/${config.twitter}`,
     title: `Twitter @${config.twitter}`,
-    icon: (
-      <FaTwitter />
-    )
+    icon: <FaTwitter />
   },
 
   config.github && {
     name: 'github',
     href: `https://github.com/${config.github}`,
     title: `GitHub @${config.github}`,
-    icon: (
-      <FaGithub />
-    )
+    icon: <FaGithub />
   },
 
   config.linkedin && {
     name: 'linkedin',
     href: `https://www.linkedin.com/in/${config.linkedin}`,
     title: `LinkedIn ${config.author}`,
-    icon: (
-      <FaLinkedin />
-    )
+    icon: <FaLinkedin />
   },
 
   config.telegram && {
     name: 'telegram',
     href: `https://t.me/${config.telegram}`,
     title: `Telegram ${config.author}`,
-    icon: (
-      <FaTelegram />
-    )
-  },
+    icon: <FaTelegram />
+  }
 ].filter(Boolean)
 
 export const PageSocial: React.FC = () => {

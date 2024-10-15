@@ -14,15 +14,16 @@ export default siteConfig({
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: "Labby.ch, le petit blog tuto de Slendy_Milky sur l'auto-hébergement ! ",
+  description:
+    "Labby.ch, le petit blog tuto de Slendy_Milky sur l'auto-hébergement ! ",
 
   // social usernames (optional)
   // twitter: '',
   github: 'slendymilky',
   linkedin: 'yann-solliard',
   telegram: 'Slendy_Milky',
-  discord: '» Labby.ch',  /* Server Name */
-  discord_invite: 'https://discord.gg/RpgS68bh3B', /* Discord invite link */
+  discord: '» Labby.ch' /* Server Name */,
+  discord_invite: 'https://discord.gg/RpgS68bh3B' /* Discord invite link */,
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   youtube: '@labby_ch', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
@@ -70,7 +71,7 @@ export default siteConfig({
   //     title: 'Bio',
   //     pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
   //   }
- //],
+  //],
 
   isSearchEnabled: true
 })
