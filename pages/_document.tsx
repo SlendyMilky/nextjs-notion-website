@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
               />
 
             <link rel='manifest' href='/manifest.json' />
+            <script defer src="https://pulse.slyc.ch/script.js" data-website-id="82e7749b-b78c-4e83-831a-556e7c8d9b58"></script>
           </Head>
 
           <body>
