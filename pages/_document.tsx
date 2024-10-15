@@ -15,21 +15,25 @@ export default class MyDocument extends Document {
               type='image/png'
               sizes='32x32'
               href='favicon-32x32.png'
-              />
-              <link
-                rel='apple-touch-icon'
-                sizes='180x180'
-                href='/apple-touch-icon.png'
-              />
-              <link
-                rel='icon'
-                type='image/png'
-                sizes='96x96'
-                href='/favicon-96x96.png'
-              />
+            />
+            <link
+              rel='apple-touch-icon'
+              sizes='180x180'
+              href='/apple-touch-icon.png'
+            />
+            <link
+              rel='icon'
+              type='image/png'
+              sizes='96x96'
+              href='/favicon-96x96.png'
+            />
 
             <link rel='manifest' href='/manifest.json' />
-            <script defer src="https://pulse.slyc.ch/script.js" data-website-id="82e7749b-b78c-4e83-831a-556e7c8d9b58"></script>
+            <script
+              defer
+              src='https://pulse.slyc.ch/script.js'
+              data-website-id='82e7749b-b78c-4e83-831a-556e7c8d9b58'
+            ></script>
           </Head>
 
           <body>

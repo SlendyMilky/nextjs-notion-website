@@ -14,7 +14,8 @@ export default siteConfig({
   author: 'Yann Solliard',
 
   // open graph metadata (optional)
-  description: '👋 Yann Solliard, Administrateur Système Linux passionné, expert en solutions open-source, avec une expertise en virtualisation, automatisation et gestion infrastructures IT.',
+  description:
+    '👋 Yann Solliard, Administrateur Système Linux passionné, expert en solutions open-source, avec une expertise en virtualisation, automatisation et gestion infrastructures IT.',
 
   // social usernames (optional)
   // twitter: '',
@@ -62,15 +63,15 @@ export default siteConfig({
   navigationStyle: 'custom',
 
   navigationLinks: [
-     {
-       title: 'Contact',
-       pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
-     },
-     {
-       title: 'Bio',
-       pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
-     }
- ],
+    {
+      title: 'Contact',
+      pageId: 'Relation-64bf6bfe6a4043a09a95e2f0ea55f79b'
+    },
+    {
+      title: 'Bio',
+      pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
+    }
+  ],
 
   isSearchEnabled: true
 })

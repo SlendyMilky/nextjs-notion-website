@@ -1,13 +1,7 @@
 import * as React from 'react'
 
-import /* Ant Design Icons */
-{ 
-  AiOutlineRetweet
-} from 'react-icons/ai'
-import /* Ionicons 5 */
-{ 
-  IoHeartOutline
-} from 'react-icons/io5'
+import { AiOutlineRetweet } from 'react-icons/ai'
+import { IoHeartOutline } from 'react-icons/io5'
 
 import styles from './styles.module.css'
 

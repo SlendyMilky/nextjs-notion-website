@@ -4,6 +4,7 @@
  * This file pulls from the root "site.config.ts" as well as environment variables
  * for optional depenencies.
  */
+import { Repo } from '@giscus/react'
 import { parsePageId } from 'notion-utils'
 import { PostHogConfig } from 'posthog-js'
 
@@ -15,7 +16,6 @@ import {
   PageUrlOverridesMap,
   Site
 } from './types'
-import { Repo } from '@giscus/react'
 
 export const rootNotionPageId: string = parsePageId(
   getSiteConfig('rootNotionPageId'),
@@ -56,7 +56,10 @@ export const language: string = getSiteConfig('language', 'en')
 
 // social accounts
 export const discord: string | null = getSiteConfig('discord', null)
-export const discord_invite: string | null = getSiteConfig('discord_invite', null)
+export const discord_invite: string | null = getSiteConfig(
+  'discord_invite',
+  null
+)
 export const twitter: string | null = getSiteConfig('twitter', null)
 export const mastodon: string | null = getSiteConfig('mastodon', null)
 export const github: string | null = getSiteConfig('github', null)
@@ -69,8 +72,14 @@ export const zhihu: string | null = getSiteConfig('zhihu', null)
 // giscus config
 export const giscusRepo: Repo | null = getSiteConfig('giscusRepo', null)
 export const giscusRepoId: string | null = getSiteConfig('giscusRepoId', null)
-export const giscusCategory: string | null = getSiteConfig('giscusCategory', null)
-export const giscusCategoryId: string | null = getSiteConfig('giscusCategoryId', null)
+export const giscusCategory: string | null = getSiteConfig(
+  'giscusCategory',
+  null
+)
+export const giscusCategoryId: string | null = getSiteConfig(
+  'giscusCategoryId',
+  null
+)
 
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {

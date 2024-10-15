@@ -1,23 +1,17 @@
 import * as React from 'react'
 
-import /* Ionicons 5 */
-{ 
-  IoMoonSharp,
-  IoSunnyOutline
-} from 'react-icons/io5'
-
-import /* Font Awesome */
-{ 
+import {
   FaDiscord,
-  FaYoutube,
-  FaTwitter,
-  FaMastodon,
+  FaEnvelopeOpenText,
   FaGithub,
   FaLinkedin,
+  FaMastodon,
   FaTelegram,
-  FaZhihu,
-  FaEnvelopeOpenText
-} from "react-icons/fa";
+  FaTwitter,
+  FaYoutube,
+  FaZhihu
+} from 'react-icons/fa'
+import { IoMoonSharp, IoSunnyOutline } from 'react-icons/io5'
 
 import * as config from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
@@ -45,7 +39,9 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>© Copyright {currentYear}. All rights reserved.</div>
+      <div className={styles.copyright}>
+        © Copyright {currentYear}. All rights reserved.
+      </div>
 
       <div className={styles.settings}>
         {hasMounted && (
