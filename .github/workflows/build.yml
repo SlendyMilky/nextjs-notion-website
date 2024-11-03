@@ -1,9 +1,16 @@
-name: CI
+name: master - CI and Vercel Production Deployment
 
-on: [push, pull_request]
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  test:
+  Test:
     name: Test Node.js ${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
@@ -36,9 +43,21 @@ jobs:
       - name: Run test
         run: pnpm test
 
-      # TODO Enable those lines below if you use a Redis cache, you'll also need to configure GitHub Repository Secrets
-      # env:
-      #   REDIS_HOST: ${{ secrets.REDIS_HOST }}
-      #   REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
-      # - name: Build
-      #   run: pnpm build
+  Deploy-Production:
+    needs: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Yarn
+        run: corepack enable && corepack prepare yarn@stable --activate
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Pull Vercel Environment Information
+        run: yarn run vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project And Deploy
+        run: yarn run vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} && yarn run vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
