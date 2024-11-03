@@ -21,8 +21,8 @@ export default siteConfig({
   github: 'slendymilky',
   linkedin: 'yann-solliard',
   telegram: 'SlendyMilky',
-  discord: 'Serveur iMot3k',  /* Server Name */
-  discord_invite: 'https://discord.gg/4jNmg9qSJU', /* Discord invite link */
+  discord: 'Serveur iMot3k' /* Server Name */,
+  discord_invite: 'https://discord.gg/4jNmg9qSJU' /* Discord invite link */,
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   youtube: 'channel/UC-i4k6L0R70vkK0zE8Buj5Q', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
@@ -70,7 +70,7 @@ export default siteConfig({
   //     title: 'Bio',
   //     pageId: 'A-propos-de-moi-0aebde79254b4f0e8a04a451c5c426a9'
   //   }
- //],
+  //],
 
   isSearchEnabled: true
 })
