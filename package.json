@@ -55,7 +55,8 @@
     "react-notion-x": "^7.0.1",
     "react-tweet-embed": "^2.0.0",
     "react-use": "^17.4.2",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "vercel": "^37.14.0"
   },
   "devDependencies": {
     "@fisch0920/eslint-config": "^1.4.0",
