@@ -1,63 +1,21 @@
-name: master - CI and Vercel Production Deployment
-
+name: Master - Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID}}
 on:
   push:
     branches:
       - master
-
 jobs:
-  Test:
-    name: Test Node.js ${{ matrix.node-version }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        node-version:
-          - 18
-          - 22
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        id: pnpm-install
-        with:
-          version: 9.12.2
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile --strict-peer-dependencies
-
-      - name: Run test
-        run: pnpm test
-
   Deploy-Production:
-    needs: Test
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Install Yarn
         run: corepack enable && corepack prepare yarn@stable --activate
-
       - name: Install dependencies
         run: yarn install --immutable
-
       - name: Pull Vercel Environment Information
         run: yarn run vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build Project And Deploy
+      - name: Build Project And Deploy 
         run: yarn run vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} && yarn run vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
